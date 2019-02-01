@@ -20,6 +20,7 @@
 
 
 /* Transition Effects */
+/* The transition is sort of a like a part one of the transiton that sets up the next part. It makes the base color whit and the next step in the selctor with the pseudo-class is the final color that it changes to. */
 nav#gameLinks a {
     position: relative;
     color: white;
@@ -30,6 +31,7 @@ nav#gameLinks a:hover{
     color: rgb(255, 194, 99);
 }
 
+/* Here after the element has been displayed the transtion starts. */
 nav#gameLinks a::after {
     content: "";
     position: absolute;
@@ -43,22 +45,25 @@ nav#gameLinks a::after {
     transition: opacity 0.5s, width 0.5s;
 }
 
+/* Here after the specified time interval the opacity appears and the width is bumped up so it can be visible. */
 nav#gameLinks a:hover::after {
     opacity: 1;
     width: 100%;
 }
 
 /* Sprite Styles */
+
 div.sprite {
     position: absolute;
 }
-
+/* Here the style are to maek sure the image is stylized to look nice. The animation has to seperat animations caled for. The playSprite makes it so that the backgorund is consitent with the rest of the picture so i doesn't look wonky. Both the animations are set to inifinte so that they loop while the user has the website open. */
 div#bat{
     width: 40px;
     height: 50px;
     top: 100px;
     left: -50px;
     background: url(paa_bat.png) left center/ cover no-repeat;
+    animation: playSprite 2.000s steps(39) infinite, flyRight 8.000s linear infinite;
 }
 
 div#butterfly {
@@ -67,6 +72,7 @@ div#butterfly {
     top:60px;
     left: -50px;
     background: url(paa_bfly.png) left center/ cover no-repeat;
+    animation: playSprite 1.000s 3.000s steps(33) infinite, flyRight 6.000s cubic-bezier(0, 1, 0.73, 0) infinite;  
 }
 
 div#fox {
@@ -75,15 +81,18 @@ div#fox {
     bottom: 10px;
     right: 10px;
     background: url(paa_fox.png) left center/ cover no-repeat; 
-   animation: playSprite 3.500s 4.000s steps(27) infinite;
+    animation: playSprite 3.500s 4.000s steps(27) infinite;
 }
 /* Animation Styles */
+
+/* This keyframe makes sure the background stays with the image and folows it movemetns. */
 @keyframes playSprite {
     100% {
         background-position: right center;
     }
 }
 
+/* Here at each time interval the elemnt being moved goes up and down to make it look like the image is flying. */
 @keyframes flyRight {
     25% {
         top: 150px;
