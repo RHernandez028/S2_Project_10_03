@@ -66,15 +66,17 @@ div#bat{
     animation: playSprite 2.000s steps(39) infinite, flyRight 8.000s linear infinite;
 }
 
+/* Here the butterfly is stylized to be above the bat so that aren't behind one another. One of the animations make the butterfly flap its wings while the the other makes butterfly's movement eratic to simulate a bug's movemetn.  */
 div#butterfly {
     width: 35px;
     height: 35px;
-    top:60px;
+    top: 60px;
     left: -50px;
     background: url(paa_bfly.png) left center/ cover no-repeat;
     animation: playSprite 1.000s 3.000s steps(33) infinite, flyRight 6.000s cubic-bezier(0, 1, 0.73, 0) infinite;  
 }
 
+/* The animtaion here makes the fox jump up and dwon. */
 div#fox {
     width: 280px;
     height: 260px;
